@@ -11,13 +11,17 @@ This library is used to translate the html file to the destination langauge
 2. Installation:
 
     1. Create python virtual Environment and Activate it in your machine.
-        for ubuntu 
+    
+        For ubuntu 
+
         python3 -m venv my-project-env
+
         source my-project-env/bin/activate
 
     2. Clone the package and placed the files in the folder(my-project-env)
 
     3. Run the below command from the project's root directory((my-project-env))
+
         pip install -r requirements.txt [To install the required modules]
     
 
@@ -25,7 +29,9 @@ This library is used to translate the html file to the destination langauge
 
     Sample html file need to placed in the project directory. [In our project "test.html"]
     Run the command 
-        python translate_html.py
+
+    python translate_html.py
+    
     Now you can see the Output.html ['The newly translated html file'] in the project directory.
 
 
