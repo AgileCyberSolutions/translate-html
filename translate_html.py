@@ -44,7 +44,7 @@ def text_to_translate(content):
     translator = Translator()
     a_dict = dict()
     for i, element in content.items():
-        translation = translator.translate(element, dest='ca')
+        translation = translator.translate(element, dest='ca') #here you can change the language
         a_dict[element] = translation.text
     return a_dict
 
