@@ -12,8 +12,8 @@ This library is used to translate the html file to the destination langauge
 
     1. Create python virtual Environment and Activate it in your machine.
         for ubuntu 
-            "python3 -m venv my-project-env"
-            "source my-project-env/bin/activate"
+        python3 -m venv my-project-env
+        source my-project-env/bin/activate
 
     2. Clone the package and placed the files in the folder(my-project-env)
 
