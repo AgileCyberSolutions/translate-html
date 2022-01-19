@@ -34,6 +34,7 @@ def html_to_text(html):
                 text.append(str(string))
     #sort - or smaller text will get replaced in larger texts
     text.sort(key = len, reverse=True)
+    #form a key value pair strings from the given html
     doc = dict()       
     for value in text:
         key = value.replace('  ','')
@@ -41,10 +42,14 @@ def html_to_text(html):
     return doc
 
 def text_to_translate(content):
+    """translate the values from the given key value pair and 
+     form a dict
+    """
+    language_locale = "ca" #here you can change the language
     translator = Translator()
     a_dict = dict()
     for i, element in content.items():
-        translation = translator.translate(element, dest='ca') #here you can change the language
+        translation = translator.translate(element, dest=language_locale) 
         a_dict[element] = translation.text
     return a_dict
 
@@ -52,17 +57,21 @@ if __name__ == '__main__':
     fp = open("test.html", "r")
     html = fp.read()
     fp.close()
+    #parsing html file
     soup = BeautifulSoup(html, 'html.parser')
     html = str(soup.prettify())
+    #replace leading and trailing spaces
     html = ' '.join(html.split()).strip()
     while '  ' in html:
         html = html.replace('  ', ' ')
     content = html_to_text(html)
     fields =  text_to_translate(content)
+    #replace the translated strings in the original content
     for f_key, f_value in fields.items():
         if f_key != f_value:
             html = html.replace(str(f_key), f_value)
             html = html.replace(htmllib.escape(str(f_key)), f_value)
+    #writes the translated content in another file
     f1 = open('output.html', 'w')
     f1.write(html)
     f1.close()
