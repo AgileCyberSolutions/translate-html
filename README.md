@@ -1,6 +1,6 @@
 README
 
-This library is used to translate the html file to the destination langauge
+This library is used to translate the html file into the destination language.
 
 
 1. Prerequisites:
@@ -18,7 +18,7 @@ This library is used to translate the html file to the destination langauge
 
         source my-project-env/bin/activate
 
-    2. Clone the package and placed the files in the folder(my-project-env)
+    2. Clone the package and place the files in the folder(my-project-env)
 
     3. Run the below command from the project's root directory((my-project-env))
 
@@ -27,7 +27,7 @@ This library is used to translate the html file to the destination langauge
 
 3. To run the program:
 
-    Sample html file need to placed in the project directory. [In our project "test.html"]
+    Sample html file needs to be placed in the project directory. [In our project "test.html"]
     Run the command 
 
     python translate_html.py
@@ -44,5 +44,5 @@ This library is used to translate the html file to the destination langauge
     [Since it uses the web API of translate.google.com It has some limitations]:
 
     1. The maximum character limit on a single text is 15k
-    2. If you get HTTP 5xx error or errors like #6, it's probably because Google has banned your client IP address.
+    2. If you get HTTP 5xx error, it's probably because Google has banned your client IP address.
     3. Due to limitations of the web version of google translate, translate.google.com API does not guarantee that the library would work properly at all times (so please use this library if you don't care about stability).
